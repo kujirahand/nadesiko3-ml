@@ -109,7 +109,7 @@ describe('ml_test', () => {
   	cmp(srcRF, "OK")
   })
   it('アヤメ予測/SVM', () => {
-  	const src = "SVM={'kernel':'RBF', 'type':'C_SVC'}でSVM開く\n" + 
+  	const src = "{'kernel':'RBF', 'type':'C_SVC'}でSVM開く\n" + 
   		"Y=アヤメデータ取得。\n" +
   		"R=Y['データ']とY['ラベル']を0.8でデータランダム分割\n" +
   		//"R['学習']['データ']の要素数を表示。"+
