@@ -64,6 +64,9 @@ Node.jsで使う人は、以下のような感じにします。
 npm install nadesiko3
 npm install nadesiko3-ml
 
+# サンプルを実行
+$(npm bin)/cnako3 node_modules/nadesiko3-ml/example/svm-xor.nako3
+$(npm bin)/cnako3 node_modules/nadesiko3-ml/example/rf-iris.nako3
 ```
 
 
