@@ -1,6 +1,6 @@
 {
   "name": "nadesiko3-ml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Machine Learning for Nadesiko3",
   "main": "src/plugin_ml.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "libsvm-js": "^0.2.1",
-    "ml-dataset-iris": "^1.1.1"
+    "ml-random-forest": "^2.0.1"
   }
 }
