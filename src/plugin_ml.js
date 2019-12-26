@@ -1,5 +1,4 @@
 // plugin_ml.js
-PLUGIN_ML_INIT_ERROR = "『SVM開』や『ランダムフォレスト開』などでオブジェクトを初期化してください。"
 const PluginML = {
   '初期化': {
     type: 'func',
@@ -74,7 +73,7 @@ const PluginML = {
     josi: [['と'], ['で']],
     fn: function (inputs, labels, sys) {
       if (!sys.__ml || !sys.__ml.train) {
-      	throw new Error('『学習』にて' + PLUGIN_ML_INIT_ERROR)
+      	throw new Error('『学習』にて『SVM開』などで初期化してください。')
       }
       sys.__ml.train(inputs, labels) 
     },
@@ -85,7 +84,7 @@ const PluginML = {
     josi: [['で']],
     fn: function (inputs, sys) {
       if (!sys.__ml || !sys.__ml.predict) {
-      	throw new Error('『予測』にて' + PLUGIN_ML_INIT_ERROR)
+      	throw new Error('『予測』にて『SVM開』などで初期化してください。')
       }
       let a = sys.__ml.predict(inputs)
       return a
@@ -96,7 +95,7 @@ const PluginML = {
     josi: [['で']],
     fn: function (inputs, sys) {
       if (!sys.__ml || !sys.__ml.predict) {
-      	throw new Error('『予測』にて' + PLUGIN_ML_INIT_ERROR)
+      	throw new Error('『予測』にて『SVM開』などで初期化してください。')
       }
       let a = sys.__ml.predict(inputs)
       return a
@@ -152,9 +151,9 @@ const PluginML = {
       }
       const n = Math.floor(a.length * rate)
       // 分割
-      res = {'学習':{'データ':[],'ラベル':[]}, 'テスト':{'データ':[], 'ラベル':[]}}
-      resTrain = res['学習']
-      resTest = res['テスト']
+      const res = {'学習':{'データ':[],'ラベル':[]}, 'テスト':{'データ':[], 'ラベル':[]}}
+      const resTrain = res['学習']
+      const resTest = res['テスト']
       for (let i = 0; i < a.length; i++) {
       	const fdata = a[i]['data']
       	const flabel = a[i]['label']
@@ -185,5 +184,9 @@ const PluginML = {
 }
 
 module.exports = PluginML
+
+// scriptタグで取り込んだ時、自動で登録する
+if (typeof (navigator) === 'object') 
+  {navigator.nako3.addPluginObject('PluginML', PluginML)}
 
 
