@@ -1,0 +1,28 @@
+{
+  "name": "nadesiko3-ml",
+  "version": "1.0.0",
+  "description": "Machine Learning for Nadesiko3",
+  "main": "src/plugin_ml.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kujirahand/nadesiko3-ml.git"
+  },
+  "author": "kujirahand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kujirahand/nadesiko3-ml/issues"
+  },
+  "homepage": "https://github.com/kujirahand/nadesiko3-ml#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "nadesiko3": "^3.0.65",
+    "webpack": "^4.41.4"
+  },
+  "dependencies": {
+    "libsvm-js": "^0.2.1",
+    "ml-dataset-iris": "^1.1.1"
+  }
+}
