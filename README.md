@@ -69,7 +69,13 @@ $(npm bin)/cnako3 node_modules/nadesiko3-ml/example/svm-xor.nako3
 $(npm bin)/cnako3 node_modules/nadesiko3-ml/example/rf-iris.nako3
 ```
 
+# 手書き数字の認識デモを実行
 
+以下を実行する
+
+```
+cnako3 demo/mnist-server/mnist-server.nako3
+```
 
 
 
