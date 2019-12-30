@@ -24,7 +24,13 @@ const PluginML = {
       }
       const svm = new SVM(option)
       sys.__ml = svm
-      sys.__ml_load = SVM.load
+      sys.__ml_load = (model) => {
+        try {
+          return SVM.load(model)
+        } catch (e) {
+          throw new Error("『モデル取得』でエラー。" + e.message)
+        }
+      }
       sys.__ml_toString = function () {
       	return sys.__ml.serializeModel()
       }
@@ -73,7 +79,7 @@ const PluginML = {
     josi: [['と'], ['で']],
     fn: function (inputs, labels, sys) {
       if (!sys.__ml || !sys.__ml.train) {
-      	throw new Error('『学習』にて『SVM開』などで初期化してください。')
+      	throw new Error('『学習』の前に『SVM開』などで初期化してください。')
       }
       sys.__ml.train(inputs, labels) 
     },
@@ -84,7 +90,7 @@ const PluginML = {
     josi: [['で']],
     fn: function (inputs, sys) {
       if (!sys.__ml || !sys.__ml.predict) {
-      	throw new Error('『予測』にて『SVM開』などで初期化してください。')
+      	throw new Error('『予測』の前に『SVM開』などで初期化してください。')
       }
       let a = sys.__ml.predict(inputs)
       return a
@@ -107,7 +113,7 @@ const PluginML = {
     josi: [],
     fn: function (sys) {
       if (!sys.__ml_toString) {
-      	throw new Error('『モデル設定』にて' + PLUGIN_ML_INIT_ERROR)
+      	throw new Error('『モデル設定』の前に『SVM開』などで初期化してだくさい。')
       }
       return sys.__ml_toString()
     }
@@ -117,7 +123,7 @@ const PluginML = {
     josi: [['を', 'の']],
     fn: function (m, sys) {
       if (!sys.__ml_load) {
-      	throw new Error('『モデル設定』にて' + PLUGIN_ML_INIT_ERROR)
+      	throw new Error('『モデル設定』の前に『SVM開』などで初期化してだくさい。')
       }
       sys.__ml = sys.__ml_load(m)
       return sys.__ml
