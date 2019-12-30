@@ -87,7 +87,7 @@ const PluginML = {
   },
   '予測': { // @入力配列inputsで予測し機械学習の結果を配列で返す // @よそく
     type: 'func',
-    josi: [['で']],
+    josi: [['を', 'で']],
     fn: function (inputs, sys) {
       if (!sys.__ml || !sys.__ml.predict) {
       	throw new Error('『予測』の前に『SVM開』などで初期化してください。')

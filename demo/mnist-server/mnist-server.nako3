@@ -1,0 +1,42 @@
+!「nadesiko3-ml」を取り込む。
+!「plugin_express.js」を取り込む。
+PORT=3030
+HOME_DIR=ホームディレクトリ取得。
+MNIST_FILE = 母艦パスを「../../test/mnist-1k.json」で相対パス展開。
+
+{}でSVM開く。
+MNIST_FILEを開いて、JSONデコードして、Jに代入。
+J["data"]とJ["label"]で学習。
+
+# --- WEBサーバー起動
+PORTでWEBサーバ起動した時には
+　　ルーティング設定。
+　　URL=「http://localhost:{PORT}/」
+　　「>>> 以下のURLにWebブラウザでアクセスしてください。」と表示。
+　　「>>> [URL] {URL}」を表示。
+　　「>>>」を表示。
+　　URLをブラウザ起動。
+ここまで。
+
+WEBサーバ起動失敗した時には
+　　「起動失敗。ポート番号など変更してください。」と表示。
+ここまで。
+
+●ルーティング設定とは
+	# --- 静的ディレクトリの指定
+	「/html」を「{母艦パス}/html」へWEBサーバ静的パス指定。
+	
+	# --- ルーティング
+	「/」へWEBサーバGETした時には
+	　　「/html/client.html」にWEBサーバリダイレクト。
+	ここまで。
+	
+	「/api」へWEBサーバGETした時には
+	　　P=GETデータ["p"]を「,」で区切る。
+	　　[P]で予測してPREDに代入。
+	　　NO=PRED[0]
+	　　「予測={NO}」を表示。
+	　　{"Content-Type": "text/html"}をWEBサーバヘッダ出力。
+	　　「{NO}」をWEBサーバ出力。
+	ここまで。
+ここまで。
