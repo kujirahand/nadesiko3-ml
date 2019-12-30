@@ -90,17 +90,6 @@ const PluginML = {
       return a
     }
   },
-  '予測': { // @入力配列inputsで予測し機械学習の結果を配列で返す // @よそく
-    type: 'func',
-    josi: [['で']],
-    fn: function (inputs, sys) {
-      if (!sys.__ml || !sys.__ml.predict) {
-      	throw new Error('『予測』にて『SVM開』などで初期化してください。')
-      }
-      let a = sys.__ml.predict(inputs)
-      return a
-    }
-  },
   'アヤメデータ取得': { // @アヤメデータをJSON形式で取得して返す // @あやめでーたしゅとく
     type: 'func',
     josi: [],
