@@ -28,7 +28,7 @@ const PluginML = {
         try {
           return SVM.load(model)
         } catch (e) {
-          throw new Error("『モデル取得』でエラー。" + e.message)
+          throw new Error("『モデル設定』でエラー。" + e.message)
         }
       }
       sys.__ml_toString = function () {
