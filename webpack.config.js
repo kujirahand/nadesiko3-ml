@@ -7,9 +7,9 @@ process.noDeprecation = true
 
 module.exports = {
     mode: 'development',
-    entry: './src/plugin_ml.js',
+    entry: './nadesiko3-ml.js',
     output: {
-        filename: 'plugin_ml.js',
+        filename: 'nadesiko3-ml.js',
         path: releasePath
     },
     module: {

@@ -3,7 +3,7 @@ const path = require('path')
 const nadesiko3 = require('nadesiko3')
 const NakoCompiler = nadesiko3.compiler
 const PluginNode = nadesiko3.PluginNode
-const PluginML = require('../src/plugin_ml')
+const PluginML = require('../nadesiko3-ml.js')
 
 describe('ml_test', () => {
   const nako = new NakoCompiler()

@@ -2,7 +2,7 @@
   "name": "nadesiko3-ml",
   "version": "1.0.6",
   "description": "Machine Learning for Nadesiko3",
-  "main": "src/plugin_ml.js",
+  "main": "nadesiko3-ml.js",
   "scripts": {
     "test": "mocha",
     "build": "webpack --mode production"
