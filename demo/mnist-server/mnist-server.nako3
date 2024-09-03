@@ -1,5 +1,5 @@
 !「nadesiko3-ml」を取り込む。
-!「plugin_express.js」を取り込む。
+!「nadesiko3-server」を取り込む。
 PORT=3030
 HOME_DIR=ホームディレクトリ取得。
 MNIST_FILE = 母艦パスを「../../test/mnist-1k.json」で相対パス展開。

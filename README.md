@@ -55,8 +55,6 @@ R['テスト']['ラベル']とPREDで正解率計算して表示。
 
 # なでしこのインストールとプラグインの設定
 
-ブラウザで使いたい人は、demo/index.htmlのソースを見てください。
-
 Node.jsで使う人は、以下のような感じにします。
 
 ```
@@ -65,8 +63,8 @@ npm install nadesiko3
 npm install nadesiko3-ml
 
 # サンプルを実行
-$(npm bin)/cnako3 node_modules/nadesiko3-ml/example/svm-xor.nako3
-$(npm bin)/cnako3 node_modules/nadesiko3-ml/example/rf-iris.nako3
+$ npm exec cnako3 node_modules/nadesiko3-ml/example/svm-xor.nako3
+$ npm exec cnako3 node_modules/nadesiko3-ml/example/rf-iris.nako3
 ```
 
 # 手書き数字の認識デモを実行

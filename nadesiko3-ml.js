@@ -1,5 +1,16 @@
 // plugin_ml.js
+const path = require('path')
 const PluginML = {
+  'meta': {
+    type: 'const',
+    value: {
+      pluginName: 'nadesiko3-ml', // プラグインの名前
+      description: '機械学習のためのプラグイン',
+      pluginVersion: '3.6.20', // プラグインのバージョン
+      nakoRuntime: ['cnako'], // 対象ランタイム
+      nakoVersion: '3.6.20' // 最小要求なでしこバージョン
+    }
+  },
   '初期化': {
     type: 'func',
     josi: [],
@@ -100,7 +111,7 @@ const PluginML = {
     type: 'func',
     josi: [],
     fn: function (sys) {
-      const a = require('./iris.js')
+      const a = require(path.join(__dirname, 'iris.js'))
       return {
       	'データ': a['data'], 
       	'ラベル': a['label'], 

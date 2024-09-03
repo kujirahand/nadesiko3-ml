@@ -1,11 +1,11 @@
 {
   "name": "nadesiko3-ml",
-  "version": "1.0.6",
+  "version": "3.6.20",
   "description": "Machine Learning for Nadesiko3",
   "main": "nadesiko3-ml.js",
   "scripts": {
     "test": "mocha",
-    "build": "webpack --mode production"
+    "build": "esbuild nadesiko3-ml.js --bundle --platform=node --target=node18 > release/nadesiko3-ml.js"
   },
   "repository": {
     "type": "git",
@@ -17,46 +17,14 @@
     "url": "https://github.com/kujirahand/nadesiko3-ml/issues"
   },
   "homepage": "https://github.com/kujirahand/nadesiko3-ml#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.23.0",
-    "date-utils": "^1.2.21",
-    "es6-promise": "^4.2.6",
-    "mocha": "^6.2.2",
-    "nadesiko3": "^3.0.65",
-    "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10"
-  },
   "dependencies": {
+    "crypto": "^1.0.1",
+    "esbuild": "^0.23.1",
     "libsvm-js": "^0.2.1",
-    "ml-random-forest": "^2.0.1",
-    "node-gyp": "^5.0.7"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "> 0.5%",
-              "> 0.5% in JP",
-              "last 2 versions",
-              "Firefox ESR",
-              "not dead"
-            ],
-            "useBuiltIns": true
-          }
-        }
-      ]
-    ]
-  },
-  "browser": {
-    "fs": false
+    "ml-random-forest": "^2.1.0",
+    "nadesiko3": "^3.6.20",
+    "nadesiko3-server": "^3.6.6",
+    "node-gyp": "^10.2.0"
   },
   "files": [
     "src",
@@ -66,6 +34,3 @@
     "release"
   ]
 }
-
-
-
