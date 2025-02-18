@@ -19,7 +19,7 @@
   "homepage": "https://github.com/kujirahand/nadesiko3-ml#readme",
   "dependencies": {
     "crypto": "^1.0.1",
-    "esbuild": "^0.23.1",
+    "esbuild": "^0.25.0",
     "libsvm-js": "^0.2.1",
     "ml-random-forest": "^2.1.0",
     "nadesiko3": "^3.6.20",
