@@ -1,6 +1,6 @@
 {
   "name": "nadesiko3-ml",
-  "version": "3.6.21",
+  "version": "3.6.22",
   "description": "Machine Learning for Nadesiko3",
   "main": "nadesiko3-ml.js",
   "scripts": {
