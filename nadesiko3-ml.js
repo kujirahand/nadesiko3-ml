@@ -192,7 +192,9 @@ const PluginML = {
 module.exports = PluginML
 
 // scriptタグで取り込んだ時、自動で登録する
-if (typeof (navigator) === 'object') 
-  {navigator.nako3.addPluginObject('PluginML', PluginML)}
+if (typeof (navigator) === 'object' && navigator.nako3) {
+  console.log('nadesiko3-ml plugin loaded.')
+  navigator.nako3.addPluginObject('PluginML', PluginML)
+}
 
 

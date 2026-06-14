@@ -75,7 +75,25 @@ $ npm exec cnako3 node_modules/nadesiko3-ml/example/rf-iris.nako3
 cnako3 demo/mnist-server/mnist-server.nako3
 ```
 
+## ファイル構成
 
+このリポジトリは以下のファイルで構成されています。
 
-
-
+- [nadesiko3-ml.js](nadesiko3-ml.js) : 機械学習プラグインの本体。SVM（`libsvm-js`）やランダムフォレスト（`ml-random-forest`）の機能を提供します。
+- [iris.js](iris.js) : アヤメ（Iris）データセット。
+- [package.json](package.json) : プロジェクトの設定と依存関係。
+- `example/` : サンプルコード。
+  - [rf-iris.nako3](example/rf-iris.nako3) : ランダムフォレストを使ってアヤメの分類を行うなでしこ3プログラム。
+  - [svm-iris.nako3](example/svm-iris.nako3) : SVMを使ってアヤメの分類を行うなでしこ3プログラム。
+  - [svm-xor.nako3](example/svm-xor.nako3) : SVMを使ってXORを学習するなでしこ3プログラム。
+- `demo/` : デモプログラム。
+  - `demo/mnist-server/` : 手書き数字（MNIST）認識のサーバーデモ。
+    - [mnist-server.nako3](demo/mnist-server/mnist-server.nako3) : サーバー側プログラム。
+    - [client.html](demo/mnist-server/html/client.html) : クライアント側（ブラウザ）のUI画面。
+  - `demo/web-ml/` : Webブラウザで動作する機械学習デモ。
+    - [index.html](demo/web-ml/index.html) : デモ画面。
+    - [wnako3.js](demo/web-ml/wnako3.js) : なでしこ3のWebランタイム。
+- `test/` : テストコード。
+  - [plugin_ml_test.js](test/plugin_ml_test.js) : 各種機械学習メソッドの単体テスト。
+  - [mnist_test.js](test/mnist_test.js) : MNISTデータを使ったテスト。
+  - [mnist-1k.json](test/mnist-1k.json) : MNISTのテストデータ（1000件）。
