@@ -27,10 +27,9 @@
     "node-gyp": "^12.4.0"
   },
   "files": [
-    "src",
+    "iris.js",
     "test",
     "demo",
     "example",
-    "release"
   ]
 }
