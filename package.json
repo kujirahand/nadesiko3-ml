@@ -18,13 +18,9 @@
   },
   "homepage": "https://github.com/kujirahand/nadesiko3-ml#readme",
   "dependencies": {
-    "crypto": "^1.0.1",
     "esbuild": "^0.28.1",
     "libsvm-js": "^0.2.1",
-    "ml-random-forest": "^2.1.0",
-    "nadesiko3": "^3.6.20",
-    "nadesiko3-server": "^3.6.6",
-    "node-gyp": "^12.4.0"
+    "ml-random-forest": "^2.1.0"
   },
   "files": [
     "iris.js",
